@@ -10,9 +10,9 @@ For the remaining datasets, run:
 ```bash
 wget https://zenodo.org/records/7937947/files/ecoli500.fa.gz
 gzip -d ecoli500.fa.gz
-python AlfaPang/scripts/preprocess_data.py ecoli500.fa AlfaPang/data/ecoli100_names.txt ecoli100.fa 
-python AlfaPang/scripts/preprocess_data.py ecoli500.fa AlfaPang/data/ecoli200_names.txt ecoli200.fa
-python AlfaPang/scripts/preprocess_data.py ecoli500.fa AlfaPang/data/ecoli400_names.txt ecoli400.fa
+python research-artifacts_ALENEX27/scripts/preprocess_data.py ecoli500.fa research-artifacts_ALENEX27/data/ecoli100_names.txt ecoli100.fa 
+python research-artifacts_ALENEX27/scripts/preprocess_data.py ecoli500.fa research-artifacts_ALENEX27/data/ecoli200_names.txt ecoli200.fa
+python research-artifacts_ALENEX27/scripts/preprocess_data.py ecoli500.fa research-artifacts_ALENEX27/data/ecoli400_names.txt ecoli400.fa
 ```
 ### E. coli 800, 1600 and 3412
 
@@ -31,6 +31,6 @@ Since June 2024, Genome and Assembly have been replaced with the NCBI datasets. 
 mkdir ecoli3412_archives
 while IFS= read -r line; do
 datasets download genome accession "$line" --filename "ecoli3412_archives/${line}.zip"
-done < AlfaPang/data/ecoli_3412_accession.txt
+done < research-artifacts_ALENEX27/data/ecoli_3412_accession.txt
 ```
 
