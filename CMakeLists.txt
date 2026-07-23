@@ -53,6 +53,11 @@ endif()
 
 find_package(OpenMP REQUIRED)
 
+add_custom_target(psascan_build ALL
+    COMMAND make
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/externals/psascan
+)
+
 # -------------------------------
 # Dodaj katalogi include
 # -------------------------------
@@ -60,6 +65,7 @@ include_directories(
     include
     ${CMAKE_SOURCE_DIR}/externals/unordered_dense/include
 )
+
 
 # -------------------------------
 # Dodaj libsais jako subdirectory
@@ -83,7 +89,9 @@ add_library(SequenceUtils
 add_library(QUOTIENT_E
     src/quotient_external.cpp
 )
-
+target_compile_definitions(QUOTIENT_E PRIVATE
+    CONSTRUCT_SA_PATH="${CMAKE_SOURCE_DIR}/externals/psascan/construct_sa"
+)
 
 target_link_libraries(QUOTIENT_E
     PRIVATE SAMPLE
@@ -107,6 +115,9 @@ target_link_libraries(Indexing
 # Tworzenie głównego executabla
 # -------------------------------
 add_executable(quotient main.cpp src/build_external.cpp src/build_rapid.cpp)
+target_compile_definitions(quotient PUBLIC
+    CONSTRUCT_SA_PATH="${CMAKE_SOURCE_DIR}/externals/psascan/construct_sa"
+)
 
 target_link_libraries(quotient
     PRIVATE FastaUtils

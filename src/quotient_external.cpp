@@ -16,7 +16,7 @@ std::vector<int32_t> quotient_external_32(std::string &seq, int k,std::string in
 		std::ofstream out(input_file);
     out << seq;
   }
-	std::string cmd1 = "~/psascan/construct_sa -m " + mem + " " + input_file;
+	std::string cmd1 = std::string(CONSTRUCT_SA_PATH) + " -m " + mem + " " + input_file;
   if (system(cmd1.c_str()) != 0) {
 		std::cerr << "psascan failed\n";
     exit(1);
@@ -115,7 +115,7 @@ signed_uint40_vector quotient_external_40(std::string &seq, int k, size_t &v,std
 		std::ofstream out(input_file);
     out << seq;
   }
-	std::string cmd1 = "~/psascan/construct_sa -m " + mem + " " + input_file;
+	std::string cmd1 = std::string(CONSTRUCT_SA_PATH) + " -m " + mem + " " + input_file;
   if (system(cmd1.c_str()) != 0) {
 		std::cerr << "psascan failed\n";
     exit(1);

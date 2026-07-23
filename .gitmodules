@@ -7,3 +7,6 @@
 [submodule "externals/robin-hood-hashing"]
 	path = externals/robin-hood-hashing
 	url = https://github.com/martinus/robin-hood-hashing.git
+[submodule "externals/psascan"]
+	path = externals/psascan
+	url = https://github.com/dominikkempa/psascan.git
