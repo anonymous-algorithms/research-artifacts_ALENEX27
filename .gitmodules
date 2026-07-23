@@ -1,0 +1,9 @@
+[submodule "externals/libsais"]
+	path = externals/libsais
+	url = https://github.com/IlyaGrebnov/libsais.git
+[submodule "externals/unoreder_dense"]
+	path = externals/unoreder_dense
+	url = https://github.com/martinus/unordered_dense.git
+[submodule "externals/robin-hood-hashing"]
+	path = externals/robin-hood-hashing
+	url = https://github.com/martinus/robin-hood-hashing.git
