@@ -153,4 +153,4 @@ target_compile_definitions(quotient PRIVATE LIBSAIS_OPENMP)
 # Opcjonalnie: kompilacja z sdsl, jeśli używasz
 # -------------------------------
 #find_package(sdsl REQUIRED)
-target_link_libraries(quotient PRIVATE sdsl)
+#target_link_libraries(quotient PRIVATE sdsl)
