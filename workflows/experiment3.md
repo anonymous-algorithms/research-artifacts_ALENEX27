@@ -97,11 +97,3 @@ k,total_time_median_ms,graph_construction_median_ms
 ```
 
 The directory also contains the individual logs for all runs.
-
-## Plotting the results
-
-An R script is provided to generate the plots from `summary.csv`.
-The generated figures are saved in the experiment results directory.
-
-
-The resulting `summary.csv` contains the aggregated measurements used to generate the corresponding results in the paper.
