@@ -46,14 +46,12 @@ Each invocation is wrapped with `/usr/bin/time -v`.
 For every run, the following measurements are collected:
 
 1. **Total running time** — reported by `/usr/bin/time -v`.
-2. **Index construction time** — reported by `quotient` in milliseconds.
-3. **Graph construction main step time** — reported by `quotient` in milliseconds.
-4. **Peak RSS memory** — `Maximum resident set size` reported by `/usr/bin/time -v`.
-5. **Block-layer read I/O** — `read_bytes` from `/proc/$PID/io`.
-6. **Block-layer write I/O** — `write_bytes` from `/proc/$PID/io`.
-7. **System-call-level read I/O** — `rchar` from `/proc/$PID/io`.
-8. **System-call-level write I/O** — `wchar` from `/proc/$PID/io`.
-9. **Storage usage** — total storage occupied by the input dataset and the files produced by a single invocation of `quotient`.
+2. **Peak RSS memory** — `Maximum resident set size` reported by `/usr/bin/time -v`.
+3. **Block-layer read I/O** — `read_bytes` from `/proc/$PID/io`.
+4. **Block-layer write I/O** — `write_bytes` from `/proc/$PID/io`.
+5. **System-call-level read I/O** — `rchar` from `/proc/$PID/io`.
+6. **System-call-level write I/O** — `wchar` from `/proc/$PID/io`.
+7. **Storage usage** — total storage occupied by the input dataset and the files produced by a single invocation of `quotient`.
 
 The `read_bytes` and `write_bytes` values measure the actual number of bytes transferred to and from the block layer. The `rchar` and `wchar` values measure bytes read and written at the system-call level, including I/O served from the page cache.
 
@@ -148,7 +146,7 @@ workflows/experiment2/results/summary.csv
 It contains one row per dataset and the following columns:
 
 ```text
-dataset,total_time_median_ms,index_construction_median_ms,graph_construction_median_ms,peak_rss_kb,read_bytes_median,write_bytes_median,rchar_median,wchar_median,storage_bytes
+dataset,total_time_,peak_rss,read_bytes_median,write_bytes_median,rchar_median,wchar_median,storage_bytes
 ```
 
 The directory also contains the individual logs and raw I/O measurements for all runs.
