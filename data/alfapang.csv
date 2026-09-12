@@ -1,0 +1,8 @@
+dataset,total_time_median_min,peak_rss_gb
+ecoli50,4.35,3.3
+ecoli100,21.7,7.2
+ecoli200,55.2,13.9
+ecoli400,128.1,26.6
+ecoli800,360.5,84.5
+ecoli1600,971.2,168.8
+ecoli3412,3606,358
