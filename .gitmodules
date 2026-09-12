@@ -2,7 +2,7 @@
 	path = externals/libsais
 	url = https://github.com/IlyaGrebnov/libsais.git
 [submodule "externals/unoreder_dense"]
-	path = externals/unoreder_dense
+	path = externals/unordered_dense
 	url = https://github.com/martinus/unordered_dense.git
 [submodule "externals/robin-hood-hashing"]
 	path = externals/robin-hood-hashing
