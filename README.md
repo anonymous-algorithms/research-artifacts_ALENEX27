@@ -92,6 +92,7 @@ The workflows can be followed independently without using `run.sh`. The correspo
 
 The available workflows are:
 
+* `data_preparation.md` 
 * `workflows/experiment1.md` — main-memory performance evaluation.
 * `workflows/experiment2.md` — external-memory performance evaluation.
 * `workflows/experiment3.md` — effect of the k-mer size.
