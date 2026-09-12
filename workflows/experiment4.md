@@ -14,7 +14,7 @@ This experiment compares the running time and peak memory usage of `quotient` in
   * `ecoli800.fa`: `371`
   * `ecoli1600.fa`: `533`
   * `ecoli3412.fa`: `745`
-* 11 repetitions for each configuration.
+* `p` repetitions for each configuration.
 
 The `quotient` implementation is evaluated in two modes:
 
@@ -73,7 +73,6 @@ For every configuration, the following quantities are measured:
 1. **Wall clock time** — obtained using `/usr/bin/time -v`.
 2. **Peak memory usage** — `Maximum resident set size` reported by `/usr/bin/time -v`.
 
-Both measurements are summarized using the median of the 11 repetitions.
 
 The generated graph is written to a single `output.gfa` and overwritten between runs. Logs are retained.
 
@@ -117,7 +116,7 @@ The main-memory `quotient` configuration is omitted for `ecoli3412.fa`.
 The experiment can also be executed automatically using the provided script:
 
 ```bash
-./workflows/experiment4/run.sh 20
+./workflows/experiment4/run.sh <threads> <repetitions>
 ```
 
 By default, the script uses the precomputed AlfaPang results from `data/alfapang.csv` and does not rerun AlfaPang.
@@ -131,7 +130,7 @@ Therefore, the artifact includes the AlfaPang results used in the paper in `data
 If the evaluator wants to reproduce the AlfaPang measurements from scratch, AlfaPang can be compiled from the specified historical commit and the complete set of runs can be enabled explicitly:
 
 ```bash
-./workflows/experiment4/run.sh 20 --run-alfapang
+./workflows/experiment4/run.sh <threads> <repetitions> --run-alfapang
 ```
 
 This option compiles AlfaPang and executes all AlfaPang repetitions. Due to the substantial time and memory requirements, rerunning AlfaPang is optional and is **not required to reproduce the reported comparison**.
@@ -141,7 +140,7 @@ This option compiles AlfaPang and executes all AlfaPang repetitions. Due to the 
 The script generates a CSV containing one row per dataset and algorithm/configuration:
 
 ```text
-dataset,algorithm,mode,k,total_time_median_ms,peak_rss_kb
+dataset,algorithm,mode,k,total_time_median,peak_rss
 ecoli50,quotient,main-memory,47,...
 ecoli50,quotient,external-memory,47,...
 ecoli50,AlfaPang,historical,47,...
