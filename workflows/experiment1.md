@@ -100,7 +100,7 @@ workflows/experiment1/results/summary.csv
 It contains one row per dataset and the following columns:
 
 ```text
-dataset,total_time_median_ms,index_construction_median_ms,graph_construction_median_ms,peak_rss_kb
+dataset,total_time_median,index_construction_median,graph_construction_median,peak_rss_kb
 ```
 
 The directory also contains the individual logs for all runs.
