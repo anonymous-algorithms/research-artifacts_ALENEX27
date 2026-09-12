@@ -8,10 +8,10 @@ The algorithm is run with:
 
 * `-e` enabled
 * `t` threads, where `t` can be specified by the user
-* 11 repetitions for each dataset
+* `p` repetitions for each dataset
 * a dataset-specific value of `k`
 
-The experiments reported in the paper used `t = 20`.
+The experiments reported in the paper used `t = 20, p=11`.
 
 The `k` value is selected according to the dataset:
 
