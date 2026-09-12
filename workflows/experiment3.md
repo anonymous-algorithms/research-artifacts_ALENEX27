@@ -9,9 +9,9 @@ The algorithm is run with:
 * input dataset: `ecoli100.fa`
 * `k` values from 5 to 299, with a step of 2
 * `t` threads, where `t` can be specified by the user
-* 11 repetitions for each value of `k`
+* `p` repetitions for each value of `k`
 
-The experiments reported in the paper used `t = 20`.
+The experiments reported in the paper used `t = 20, p=11`.
 
 The command executed for each run is:
 
@@ -71,7 +71,7 @@ done
 The experiment can also be executed automatically using the provided script:
 
 ```bash
-./workflows/experiment3/run.sh 20
+./workflows/experiment3/run.sh <threads> <repetitions>
 ```
 
 The script performs the procedure above, parses the logs, and computes the median measurements for every value of `k`.
@@ -93,7 +93,7 @@ workflows/experiment3/results/summary.csv
 It contains one row per value of `k` and the following columns:
 
 ```text
-k,total_time_median_ms,graph_construction_median_ms
+k,total_time_median_s,graph_construction_median_ms
 ```
 
 The directory also contains the individual logs for all runs.
